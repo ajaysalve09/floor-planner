@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback - Atomic Home Designer Tool</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #007bff;
+      color: white;
+      padding: 0.6em 1em;
+      display: ruby;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    header h2 {
+      margin: 0 1em;
+    }
+
+  button, a, input, textarea, select {
+ outline: none;
+ -webkit-tap-highlight-color: transparent;
+ -webkit-focus-ring-color: transparent;
+}
+
+    .feedback-btn:hover {
+      background: #e6e6e6;
+    }
+
+    .close-x {
+      display: contents;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      line-height: 1;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+
+    main {
+      padding: 2em 1em;
+      background: #fff;
+      border-radius: 12px;
+    }
+
+    h3 {
+      color: #007bff;
+      margin-top: 0;
+      text-align: center;
+      margin: 0 0 1em;
+    }
+
+    textarea {
+      width: 100%;
+      resize: none;
+      padding: 12px 14px;
+      font-size: 1rem;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: border 0.2s;
+      margin-top: 10px;
+      height: 30vh;
+    }
+    textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0,123,255,0.3);
+    }
+
+    .feedback-error {
+      color: red;
+      font-size: 0.85rem;
+      text-align: center;
+      display: none;
+      margin-top: 8px;
+    }
+
+    .feedback-submit,
+    .feedback-close {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 0;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      width: 100%;
+      margin-top: 15px;
+    }
+    .feedback-submit:hover,
+    .feedback-close:hover {
+      background: #0056b3;
+    }
+
+    .thank-you {
+      display: none;
+      text-align: center;
+    }
+
+    .success-icon {
+      font-size: 3rem;
+      color: #28a745;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="close-x" onclick="window.location.href='index.html'"> <i class="fa fa-arrow-left"></i> </button>
+    <h2>Floor Planner</h2>
+  </header>
+
+  <main>
+    <!-- Feedback form -->
+    <div id="feedbackForm">
+      <h3>We value your feedback</h3>
+      <textarea id="feedbackText" placeholder="Write your feedback here..."></textarea>
+      <p id="feedbackError" class="feedback-error"></p>
+      <button id="submitFeedback" class="feedback-submit">Submit</button>
+    </div>
+
+    <!-- Thank you message -->
+    <div id="thankYouMessage" class="thank-you">
+      <div class="success-icon">✔</div>
+      <h3>Thank You!</h3>
+      <p>Your feedback helps us improve our services.</p>
+      <a href="index.html"><button class="feedback-close">Close</button></a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Floor Planner. All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const submitBtn = document.getElementById('submitFeedback');
+      const feedbackText = document.getElementById('feedbackText');
+      const feedbackError = document.getElementById('feedbackError');
+      const form = document.getElementById('feedbackForm');
+      const thankYou = document.getElementById('thankYouMessage');
+
+      submitBtn.addEventListener('click', () => {
+        const feedback = feedbackText.value.trim();
+        feedbackError.style.display = 'none';
+
+        if (!feedback) {
+          feedbackError.textContent = 'Please enter your feedback before submitting.';
+          feedbackError.style.display = 'block';
+          feedbackText.focus();
+          return;
+        }
+
+        form.style.display = 'none';
+        thankYou.style.display = 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
