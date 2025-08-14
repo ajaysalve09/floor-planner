@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atomic Home Designer Tool</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 
-
 <body>
   <header>
     <h2>Floor Planner</h2>
-    <button id="feedbackBtn" class="feedback-btn">Feedback</button>
+    <a href="feedback.html"><button class="feedback-btn">Feedback</button></a>
   </header>
+
   <main>
-      
     <div class="container">
       <form id="designForm">
         <div class="input-row">
@@ -41,7 +40,6 @@
           <div id="roomInputs"></div>
         </div>
 
-
         <div class="button-group">
           <div id="error" class="error"></div>
           <button type="submit" class="btn-submit">Generate Plan</button>
@@ -49,45 +47,17 @@
         </div>
       </form>
 
-
       <section class="plan-info-section">
         <h4>Plan Info:</h4>
         <pre id="planOutput"></pre>
-      </section> 
+      </section>
     </div>
+  </main>
 
+  <footer>
+    <p>© 2025 Floor Planner. All rights reserved.</p>
+  </footer>
 
-
-      
-<section id="feedbackSection" class="feedback-section">
- 
-  <div class="feedback-container" id="feedbackFormContainer">
-    <button class="feedback-x" id="closeFeedbackTop">×</button>
-    <h2>Feedback</h2>
-    <textarea id="feedbackText" rows="6" placeholder="Write your feedback here..."></textarea>
-    <p id="feedbackError" class="feedback-error"></p>
-    <button id="submitFeedback" class="feedback-submit">Submit</button>
-  </div>
-
-  <div class="feedback-container" id="thankYouContainer" style="display:none;">
-    <div class="success-icon">✔</div>
-    <h2>Thank You!</h2>
-    <p>Your feedback helps us improve our services.</p>
-    <button id="closeFeedback" class="feedback-close">Close</button>
-  </div>
-  
-</section>
-<div id="overlay" class="overlay"></div>
-</main>
-
-
-<footer>
-  <p>© 2025 Floor Planner. All rights reserved.</p>
-</footer>
-
-
-<script src="script.js"></script>
-
-
+  <script src="script.js"></script>
 </body>
 </html>
