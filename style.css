@@ -342,3 +342,26 @@ footer {
 .feedback-container {
   position: relative;
 }
+
+
+
+
+
+
+
+
+
+/* For tablets */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+/* For phones */
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
