@@ -8,79 +8,81 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 
+
 <body>
   <header>
     <h2>Floor Planner</h2>
     <button id="feedbackBtn" class="feedback-btn">Feedback</button>
   </header>
   <main>
-    
-      <div class="container">
-        <form id="designForm">
-          <div class="input-row">
-            <label for="plotWidth">Plot Width:</label>
-            <input type="number" id="plotWidth" min="1" step="0.1" placeholder="Width" required />
-            <label for="plotLength">Plot Length:</label>
-            <input type="number" id="plotLength" min="1" step="0.1" placeholder="Length" required />
-            <label for="unit">Unit:</label>
-            <select id="unit">
-              <option value="ft">Feet (ft)</option>
-              <option value="m">Meter (m)</option>
-              <option value="cm">Centimeter (cm)</option>
-              <option value="mm">Millimeter (mm)</option>
-              <option value="inch">Inch (in)</option>
-            </select>
-          </div>
+      
+    <div class="container">
+      <form id="designForm">
+        <div class="input-row">
+          <label for="plotWidth">Plot Width:</label>
+          <input type="number" id="plotWidth" min="1" step="0.1" placeholder="Width" required />
+          <label for="plotLength">Plot Length:</label>
+          <input type="number" id="plotLength" min="1" step="0.1" placeholder="Length" required />
+          <label for="unit">Unit:</label>
+          <select id="unit">
+            <option value="ft">Feet (ft)</option>
+            <option value="m">Meter (m)</option>
+            <option value="cm">Centimeter (cm)</option>
+            <option value="mm">Millimeter (mm)</option>
+            <option value="inch">Inch (in)</option>
+          </select>
+        </div>
 
-          <div class="input-row room-count-row">
-            <label for="roomCount">Number of Rooms:</label>
-            <input type="number" id="roomCount" min="1" max="20" placeholder="Rooms" required />
-          </div>
-
-          <div id="roomInputsWrapper">
-            <div id="roomInputs"></div>
-          </div>
-
-          <div class="button-group">
-            <div id="error" class="error"></div>
-            <button type="submit" class="btn-submit">Generate Plan</button>
-            <button id="resetBtn" class="btn-reset" type="button"><i class="fas fa-rotate-left"></i></button>
-          </div>
-        </form>
-
-        <section class="plan-info-section">
-          <h4>Plan Info:</h4>
-          <pre id="planOutput"></pre>
-        </section> 
-      </div> 
+        <div class="input-row room-count-row">
+          <label for="roomCount">Number of Rooms:</label>
+          <input type="number" id="roomCount" min="1" max="20" placeholder="Rooms" required />
+        </div>
+        <div id="roomInputsWrapper">
+          <div id="roomInputs"></div>
+        </div>
 
 
-    <section id="feedbackSection" class="feedback-section">
-      <div class="feedback-container" id="feedbackFormContainer">
-        <button class="feedback-x" id="closeFeedbackTop">×</button>
-        <h2>Feedback</h2>
-        <textarea id="feedbackText" rows="6" placeholder="Write your feedback here..."></textarea>
-        <p id="feedbackError" class="feedback-error"></p>
-        <button id="submitFeedback" class="feedback-submit">Submit</button>
-      </div>
+        <div class="button-group">
+          <div id="error" class="error"></div>
+          <button type="submit" class="btn-submit">Generate Plan</button>
+          <button id="resetBtn" class="btn-reset" type="button"><i class="fas fa-rotate-left"></i></button>
+        </div>
+      </form>
 
-      <div class="feedback-container" id="thankYouContainer">
-        <div class="success-icon">✔</div>
-        <h2>Thank You!</h2>
-        <p>Your feedback helps us improve our services.</p>
-        <button id="closeFeedback" class="feedback-close">Close</button>
-      </div>
-    </section>
 
-  </main>
+      <section class="plan-info-section">
+        <h4>Plan Info:</h4>
+        <pre id="planOutput"></pre>
+      </section> 
+    </div>
 
-  <div id="overlay" class="overlay"></div>
 
-  <footer>
-    <p>© 2025 Floor Planner. All rights reserved.</p>
-  </footer>
+<section id="feedbackSection" class="feedback-section">
+  <div class="feedback-container" id="feedbackFormContainer">
+    <button class="feedback-x" id="closeFeedbackTop">×</button>
+    <h2>Feedback</h2>
+    <textarea id="feedbackText" rows="6" placeholder="Write your feedback here..."></textarea>
+    <p id="feedbackError" class="feedback-error"></p>
+    <button id="submitFeedback" class="feedback-submit">Submit</button>
+  </div>
+  
+  <div class="feedback-container" id="thankYouContainer" style="display:none;">
+    <div class="success-icon">✔</div>
+    <h2>Thank You!</h2>
+    <p>Your feedback helps us improve our services.</p>
+    <button id="closeFeedback" class="feedback-close">Close</button>
+  </div>
+  
+</section>
+<div id="overlay" class="overlay"></div>
+</main>
 
-  <script src="script.js"></script>
 
+<footer>
+  <p>© 2025 Floor Planner. All rights reserved.</p>
+</footer>
+
+
+<script src="script.js"></script>
 </body>
 </html>
