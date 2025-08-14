@@ -90,46 +90,5 @@
 
   <script src="script.js"></script>
 
-  <script>
-    // Select all pages
-    const pages = document.querySelectorAll(".page");
-
-    // Function to show a page by ID
-    function showPage(id, addToHistory = true){
-      pages.forEach(p => p.classList.remove("active"));
-      const page = document.getElementById(id);
-      if(page) page.classList.add("active");
-
-      // Add to browser history
-      if(addToHistory){
-        history.pushState({ page: id }, "", "#" + id);
-      }
-    }
-
-    // Buttons
-    document.getElementById("feedbackBtn").addEventListener("click", ()=> showPage("feedback"));
-    document.getElementById("closeFeedbackTop").addEventListener("click", ()=> showPage("home"));
-    document.getElementById("submitFeedback").addEventListener("click", ()=>{
-      showPage("feedbackThankYou");
-    });
-    document.getElementById("closeFeedback").addEventListener("click", ()=> showPage("home"));
-
-    // Handle browser back/forward buttons
-    window.addEventListener("popstate", (event) => {
-      if(event.state && event.state.page){
-        showPage(event.state.page, false); // don't push again
-      } else {
-        showPage("home", false); // default page
-      }
-    });
-
-    // Show initial page based on URL hash
-    const hash = window.location.hash.replace("#", "");
-    if(hash){
-      showPage(hash, false);
-    } else {
-      showPage("home", false);
-    }
-  </script>
 </body>
 </html>
