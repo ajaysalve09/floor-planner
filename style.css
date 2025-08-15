@@ -109,11 +109,10 @@ form#designForm {
 }
 
 .btn-submit {
-  max-width: 260px;
   padding: 8px 10px;
-  font-weight: 700;
-  font-size: 1rem;
-  margin: 0 1em 0 0;
+  font-weight: 500;
+  font-size: 1em;
+  margin: 0 4px 0 0;
   background: #007bff;
   color: white;
   border: none;
@@ -170,6 +169,20 @@ footer {
   background: #d8dee9;
   user-select: none;
   margin-top: auto;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-bottom: 1em;
+}
+
+.footer-buttons .feedback-btn {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  background: transparent;
 }
 
 #roomInputsWrapper {
