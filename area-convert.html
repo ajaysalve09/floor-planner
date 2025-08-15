@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area Converter - Floor planner</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #007bff;
+      color: white;
+      padding: 0.6em 1em;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    header h2 {
+      font-size: 1.5rem;
+    }
+
+    header p {
+      font-size: 10px;
+    }
+
+    .close-x {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 1em 1em;
+      background: #fff;
+    }
+
+    h3 {
+      color: #007bff;
+      text-align: center;
+      margin-bottom: 1em;
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      color: #007bff;
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+
+    label {
+      display: block;
+      margin: 6px 0 0.6em;
+      font-weight: 500;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+      margin: 0 0 1em;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 1em;
+    }
+
+    .button-group button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 14px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: 0.3s;
+      background: #007bff;
+      color: white;
+    }
+
+    .result {
+      margin-top: 1.4em;
+      padding: 12px;
+      font-size: 1.4em;
+      text-align: center;
+      color: #007bff;
+      background: #e6f0ff;
+      border-radius: 12px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .hidden { display: none; }
+
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.4em 1em;
+}
+
+.input-row label {
+  width: 40%;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0 0 0.4em;
+}
+
+.input-row input,
+.input-row select {
+  width: 50%;
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #007bff;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+  </style>
+</head>
+<body>
+
+
+<header>
+<button class="close-x" onclick="window.location.href='index.html'"><i class="fa fa-arrow-left"></i></button>
+    <h2>Area Converter</h2> <p>(by Floor Planner)</p>
+</header>
+
+  <main>
+    <h4>Convert areas easily by putting values</h4>
+
+    <label>Convert From:</label>
+    <select id="fromUnit" onchange="showInputFields()">
+      <option value="">-- Select --</option>
+      <option value="dimensions">Width × Length</option>
+      <option value="sqft">Square Feet</option>
+      <option value="sqm">Square Meters</option>
+      <option value="sqyd">Square Yards</option>
+      <option value="sqin">Square Inches</option>
+      <option value="sqcm">Square Centimeters</option>
+      <option value="sqmm">Square Millimeters</option>
+      <option value="acre">Acres</option>
+      <option value="hectare">Hectares</option>
+    </select>
+
+    <!-- Example of Dimensions Input Row -->
+<div id="dimensionsInputs" class="hidden">
+  <div class="input-row">
+    <label for="width">Width:</label>
+    <input type="number" id="width" placeholder="Width">
+  </div>
+  <div class="input-row">
+    <label for="length">Length:</label>
+    <input type="number" id="length" placeholder="Length">
+  </div>
+  <div class="input-row">
+    <label for="dimensionUnit">Unit:</label>
+    <select id="dimensionUnit">
+      <option value="feet">Feet</option>
+      <option value="meters">Meters</option>
+      <option value="yards">Yards</option>
+      <option value="inches">Inches</option>
+      <option value="cm">Centimeters</option>
+      <option value="mm">Millimeters</option>
+    </select>
+  </div>
+</div>
+
+<!-- Direct Area Input Row -->
+<div id="areaInputDiv" class="hidden">
+  <div class="input-row">
+    <label for="areaValue">Value:</label>
+    <input type="number" id="areaValue" placeholder="Enter value">
+  </div>
+</div>
+
+    <label>Convert To:</label>
+    <select id="toUnit">
+      <option value="sqft">Square Feet</option>
+      <option value="sqm">Square Meters</option>
+      <option value="sqyd">Square Yards</option>
+      <option value="sqin">Square Inches</option>
+      <option value="sqcm">Square Centimeters</option>
+      <option value="sqmm">Square Millimeters</option>
+      <option value="acre">Acres</option>
+      <option value="hectare">Hectares</option>
+    </select>
+
+    <div class="button-group">
+      <button onclick="convert()">Convert</button>
+      <button onclick="confirmReset()">Refresh</button>
+    </div>
+
+<!-- Result -->
+<div id="result" class="result"></div>
+  </main>
+
+  <footer>
+  <div class="footer-buttons">
+    <a href="index.html" class="feedback-btn">Floor Planner</a>
+    <a href="feedback.html" class="feedback-btn">Feedback</a>
+  </div>
+  <p>© 2025 Floor Planner. All rights reserved.</p>
+</footer>
+
+  <script>
+    const toMeters = { feet: 0.3048, meters: 1, yards: 0.9144, inches: 0.0254, cm: 0.01, mm: 0.001 };
+    const toSqMeters = { sqft: 0.092903, sqm: 1, sqyd: 0.836127, sqin: 0.00064516, sqcm: 0.0001, sqmm: 0.000001, acre: 4046.86, hectare: 10000 };
+    const fromSqMeters = { sqft: 10.7639, sqm: 1, sqyd: 1.19599, sqin: 1550.0031, sqcm: 10000, sqmm: 1000000, acre: 0.000247105, hectare: 0.0001 };
+    const unitSymbols = {
+      sqft: "ft²", sqm: "m²", sqyd: "yd²", sqin: "in²", sqcm: "cm²", sqmm: "mm²",
+      acre: "ac", hectare: "ha",
+      feet: "ft", meters: "m", yards: "yd", inches: "in", cm: "cm", mm: "mm"
+    };
+
+    function showInputFields() {
+      const fromUnit = document.getElementById("fromUnit").value;
+      if (fromUnit === "dimensions") {
+        document.getElementById("dimensionsInputs").classList.remove("hidden");
+        document.getElementById("areaInputDiv").classList.add("hidden");
+      } else if (fromUnit) {
+        document.getElementById("areaInputDiv").classList.remove("hidden");
+        document.getElementById("dimensionsInputs").classList.add("hidden");
+      } else {
+        document.getElementById("areaInputDiv").classList.add("hidden");
+        document.getElementById("dimensionsInputs").classList.add("hidden");
+      }
+      updatePlaceholders();
+    }
+
+    function updatePlaceholders() {
+      const dimensionUnitSelect = document.getElementById("dimensionUnit");
+      const widthInput = document.getElementById("width");
+      const lengthInput = document.getElementById("length");
+      const areaInput = document.getElementById("areaValue");
+      const fromUnit = document.getElementById("fromUnit").value;
+
+      const unit = dimensionUnitSelect.value;
+      widthInput.placeholder = `Width (${unitSymbols[unit]})`;
+      lengthInput.placeholder = `Length (${unitSymbols[unit]})`;
+
+      if (fromUnit !== "dimensions" && fromUnit) {
+        areaInput.placeholder = `Value (${unitSymbols[fromUnit] || ""})`;
+      } else {
+        areaInput.placeholder = "Enter value";
+      }
+    }
+
+    function showResult(value) {
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerText = value;
+      resultDiv.classList.add("show");
+      setTimeout(() => resultDiv.classList.remove("show"), 500);
+    }
+
+    function convert() {
+      const fromUnit = document.getElementById("fromUnit").value;
+      const toUnit = document.getElementById("toUnit").value;
+      let areaSqMeters = null;
+
+      if (fromUnit === "dimensions") {
+        const w = parseFloat(document.getElementById("width").value);
+        const l = parseFloat(document.getElementById("length").value);
+        const unit = document.getElementById("dimensionUnit").value;
+        if (isNaN(w) || isNaN(l) || w <= 0 || l <= 0) {
+          showResult("Enter valid width and length.");
+          return;
+        }
+        areaSqMeters = (w * l) * toMeters[unit] ** 2;
+      } else if (fromUnit in toSqMeters) {
+        const value = parseFloat(document.getElementById("areaValue").value);
+        if (isNaN(value) || value <= 0) {
+          showResult("Enter valid value.");
+          return;
+        }
+        areaSqMeters = value * toSqMeters[fromUnit];
+      } else {
+        showResult("Select valid 'From' unit.");
+        return;
+      }
+
+      const converted = areaSqMeters * fromSqMeters[toUnit];
+      showResult(`${converted.toLocaleString(undefined, { maximumFractionDigits: 4 })} ${unitSymbols[toUnit]}`);
+    }
+
+    function confirmReset() {
+      if (confirm("Are you sure you want to reset all fields?")) {
+        resetFields();
+      }
+    }
+
+    function resetFields() {
+      document.getElementById("fromUnit").value = "";
+      document.getElementById("toUnit").value = "sqft";
+      document.getElementById("width").value = "";
+      document.getElementById("length").value = "";
+      document.getElementById("dimensionUnit").value = "feet";
+      document.getElementById("areaValue").value = "";
+      document.getElementById("dimensionsInputs").classList.add("hidden");
+      document.getElementById("areaInputDiv").classList.add("hidden");
+      document.getElementById("result").innerText = "";
+    }
+  </script>
+
+</body>
+</html>
