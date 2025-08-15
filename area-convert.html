@@ -200,7 +200,6 @@
 
     <div class="button-group">
       <button onclick="convert()">Convert</button>
-      <button onclick="confirmReset()">Refresh</button>
     </div>
 
 <!-- Result -->
@@ -293,24 +292,6 @@
 
       const converted = areaSqMeters * fromSqMeters[toUnit];
       showResult(`${converted.toLocaleString(undefined, { maximumFractionDigits: 4 })} ${unitSymbols[toUnit]}`);
-    }
-
-    function confirmReset() {
-      if (confirm("Are you sure you want to reset all fields?")) {
-        resetFields();
-      }
-    }
-
-    function resetFields() {
-      document.getElementById("fromUnit").value = "";
-      document.getElementById("toUnit").value = "sqft";
-      document.getElementById("width").value = "";
-      document.getElementById("length").value = "";
-      document.getElementById("dimensionUnit").value = "feet";
-      document.getElementById("areaValue").value = "";
-      document.getElementById("dimensionsInputs").classList.add("hidden");
-      document.getElementById("areaInputDiv").classList.add("hidden");
-      document.getElementById("result").innerText = "";
     }
   </script>
 
