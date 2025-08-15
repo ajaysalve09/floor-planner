@@ -174,7 +174,7 @@ output.innerHTML = planHTML;
 
 const resetBtn = document.getElementById('resetBtn');
 resetBtn.addEventListener('click', () => {
-  if (confirm('Are you sure you want to reset the form? All data will be lost.')) {
+  if (confirm('Are you sure you want to reset the form?\nAll data will be lost.')) {
     designForm.reset();
     roomInputsContainer.innerHTML = '';
     errorEl.textContent = '';
