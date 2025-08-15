@@ -47,10 +47,11 @@
     }
 
     input, select {
+      background: #f4f4fa;
       width: 100%;
       padding: 10px;
       border-radius: 8px;
-      border: 1px solid #ccc;
+      border: none;
       outline: none;
       font-size: 1rem;
       margin: 0 0 1em;
@@ -66,7 +67,7 @@
       flex: 1;
       padding: 12px;
       border: none;
-      border-radius: 14px;
+      border-radius: 7px;
       font-size: 1.1em;
       cursor: pointer;
       transition: 0.3s;
@@ -75,14 +76,13 @@
     }
 
     .result {
-      margin-top: 1.4em;
+      margin: 1em 0 0;
       padding: 12px;
       font-size: 1.4em;
       text-align: center;
       color: #007bff;
-      background: #e6f0ff;
-      border-radius: 12px;
-      transition: transform 0.3s, background 0.3s;
+      background: #f4f4fa;
+      border-radius: 7px;
     }
 
     .hidden { display: none; }
@@ -91,7 +91,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 0.4em 1em;
+  padding: 0 0 0 2em;
+}
+
+#dimensionsInputs,
+#areaInputDiv {
+  padding: 0.5em 0;
 }
 
 .input-row label {
@@ -107,9 +112,8 @@
   flex: 1;
   padding: 10px 14px;
   font-size: 1rem;
-  border: 1px solid #007bff;
-  border-radius: 8px;
-  transition: border-color 0.3s ease;
+  border: none;
+  border-radius: 7px;
 }
   </style>
 </head>
@@ -122,9 +126,8 @@
 </header>
 
   <main>
-    <h4>Convert areas easily by putting values</h4>
 
-    <label>From:</label>
+    <label>Convert From:</label>
     <select id="fromUnit" onchange="showInputFields()">
       <option value="">-- Select --</option>
       <option value="dimensions">Width × Length</option>
@@ -169,7 +172,7 @@
   </div>
 </div>
 
-    <label>To:</label>
+    <label>Convert To:</label>
     <select id="toUnit">
       <option value="sqft">Square Feet</option>
       <option value="sqm">Square Meters</option>
@@ -280,3 +283,4 @@
 
 </body>
 </html>
+
