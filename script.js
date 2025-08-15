@@ -132,7 +132,7 @@ designForm.addEventListener('submit', e => {
   }
 
 // Generate plan text only
-let planHTML = ` <h4>🏠 Details of Plan</h4>
+let planHTML = `
    <h5>📏 Plot Size: ${plotWidth} x ${plotLength} ${unit} </h5>
     <table style="
       width: 100%;
