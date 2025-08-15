@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feedback - Atomic Home Designer Tool</title>
+  <title>Feedback - Floor Planner</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
@@ -24,7 +24,7 @@
       background: #e6e6e6;
     }
 
-    .close-x {
+     .close-x {
       background: transparent;
       border: none;
       color: white;
@@ -49,7 +49,7 @@
       resize: none;
       padding: 12px 14px;
       font-size: 1rem;
-      border-radius: 12px;
+      border-radius: 7px;
       border: 1px solid #ccc;
       outline: none;
       transition: border 0.2s;
@@ -58,7 +58,6 @@
     }
     textarea:focus {
       border-color: #007bff;
-      box-shadow: 0 0 5px rgba(0,123,255,0.3);
     }
 
     .feedback-error {
@@ -66,7 +65,7 @@
       font-size: 0.85rem;
       text-align: center;
       display: none;
-      margin-top: 8px;
+      margin: 1em 0;
     }
 
     .feedback-submit,
@@ -75,7 +74,7 @@
       color: white;
       border: none;
       padding: 12px 0;
-      border-radius: 12px;
+      border-radius: 7px;
       cursor: pointer;
       font-weight: 600;
       font-size: 1rem;
@@ -83,6 +82,7 @@
       width: 100%;
       margin-top: 15px;
     }
+
     .feedback-submit:hover,
     .feedback-close:hover {
       background: #0056b3;
@@ -96,6 +96,7 @@
     .success-icon {
       font-size: 3rem;
       color: #28a745;
+      margin: 1em 2em;
     }
   </style>
 </head>
@@ -119,7 +120,7 @@
     <div id="thankYouMessage" class="thank-you">
       <div class="success-icon">✔</div>
       <h3>Thank You!</h3>
-      <p>Your feedback helps us improve our services.</p>
+      <p style="margin: 1em 0 2em 0">Your feedback helps us improve our services.</p>
       <a href="index.html"><button class="feedback-close">Close</button></a>
     </div>
   </main>
