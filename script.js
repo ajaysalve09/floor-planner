@@ -181,3 +181,23 @@ resetBtn.addEventListener('click', () => {
     output.textContent = '';
   }
 });
+
+
+const shareBtn = document.getElementById('shareBtn');
+
+  shareBtn.addEventListener('click', async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Floor Planner',
+          text: 'Check out this awesome Floor Planner tool!',
+          url: window.location.href
+        });
+        console.log('Shared successfully');
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      alert('Your browser does not support the Web Share API.');
+    }
+  });
