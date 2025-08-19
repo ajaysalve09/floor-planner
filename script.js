@@ -190,7 +190,7 @@ const shareBtn = document.getElementById('shareBtn');
       try {
         await navigator.share({
           title: 'Floor Planner',
-          text: 'Check out this awesome Floor Planner tool!',
+          text: 'From plot to plan in minutes',
           url: window.location.href
         });
         console.log('Shared successfully');
