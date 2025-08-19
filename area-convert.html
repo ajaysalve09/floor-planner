@@ -141,7 +141,6 @@
       <option value="hectare">Hectares (ha)</option>
     </select>
 
-    <!-- Example of Dimensions Input Row -->
 <div id="dimensionsInputs" class="hidden">
   <div class="input-row">
     <label for="width">Width:</label>
@@ -164,7 +163,6 @@
   </div>
 </div>
 
-<!-- Direct Area Input Row -->
 <div id="areaInputDiv" class="hidden">
   <div class="input-row">
     <label for="areaValue">Value:</label>
@@ -187,17 +185,10 @@
     <div class="button-group">
       <button onclick="convert()">Convert</button>
     </div>
-
-<!-- Result -->
 <div id="result" class="result">Answer</div>
   </main>
 
   <footer>
-  <div class="footer-buttons">
-    <a href="index.html" class="feedback-btn">Floor Planner</a>
-    <a href="feedback.html" class="feedback-btn">Feedback</a>
-    <button id="shareBtn" class="feedback-btn"><i class="fas fa-share"></i> Share</button>
-  </div>
   <p>© 2025 Floor Planner. All rights reserved.</p>
 </footer>
 
@@ -287,8 +278,8 @@
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Area Converter',
-          text: 'Convert area in few clicks',
+          title: 'Floor Planner',
+          text: 'Check out this awesome Floor Planner tool!',
           url: window.location.href
         });
         console.log('Shared successfully');
