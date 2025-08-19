@@ -145,11 +145,11 @@
 <div id="dimensionsInputs" class="hidden">
   <div class="input-row">
     <label for="width">Width:</label>
-    <input type="number" id="width" placeholder="Width">
+    <input type="number" placeholder="Width">
   </div>
   <div class="input-row">
     <label for="length">Length:</label>
-    <input type="number" id="length" placeholder="Length">
+    <input type="number" placeholder="Length">
   </div>
   <div class="input-row">
     <label for="dimensionUnit">Unit:</label>
@@ -196,7 +196,7 @@
   <div class="footer-buttons">
     <a href="index.html" class="feedback-btn">Floor Planner</a>
     <a href="feedback.html" class="feedback-btn">Feedback</a>
-    <button id="shareBtn" class="feedback-btn">Share</button>
+    <button id="shareBtn" class="feedback-btn"><i class="fas fa-share"></i> Share</button>
   </div>
   <p>© 2025 Floor Planner. All rights reserved.</p>
 </footer>
@@ -281,7 +281,6 @@
       showResult(`${converted.toLocaleString(undefined, { maximumFractionDigits: 4 })} ${unitSymbols[toUnit]}`);
     }
 
-
     const shareBtn = document.getElementById('shareBtn');
 
   shareBtn.addEventListener('click', async () => {
@@ -300,8 +299,8 @@
       alert('Your browser does not support the Web Share API.');
     }
   });
+  
   </script>
 
 </body>
 </html>
-
