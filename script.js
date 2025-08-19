@@ -183,6 +183,8 @@ resetBtn.addEventListener('click', () => {
 });
 
 
+
+
 const shareBtn = document.getElementById('shareBtn');
 
   shareBtn.addEventListener('click', async () => {
@@ -190,7 +192,7 @@ const shareBtn = document.getElementById('shareBtn');
       try {
         await navigator.share({
           title: 'Floor Planner',
-          text: 'From plot to plan in minutes',
+          text: 'Check out this awesome Floor Planner tool!',
           url: window.location.href
         });
         console.log('Shared successfully');
@@ -201,3 +203,22 @@ const shareBtn = document.getElementById('shareBtn');
       alert('Your browser does not support the Web Share API.');
     }
   });
+  
+
+
+  // Menu toggle
+const menuToggle = document.getElementById("menuToggle");
+const sideMenu = document.getElementById("sideMenu");
+const overlay = document.getElementById("overlay");
+
+menuToggle.addEventListener("click", () => {
+  sideMenu.style.left = "0px";   // show menu
+  overlay.style.display = "block"; // show overlay
+});
+
+// Close when clicking overlay
+overlay.addEventListener("click", () => {
+  sideMenu.style.left = "-260px"; 
+  overlay.style.display = "none"; 
+});
+
