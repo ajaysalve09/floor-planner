@@ -181,3 +181,32 @@ resetBtn.addEventListener('click', () => {
     output.textContent = '';
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+// ==== SHARE BUTTON learn page ====
+shareBtn?.addEventListener("delayed-click", async () => {
+  const shareData = {
+    title: "Molecule Merge Game",
+    text: "Check out this fun molecule merge game! 🔬✨",
+    url: window.location.href
+  };
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else {
+      alert("Sharing is not supported. You can copy this URL:\n" + shareData.url);
+    }
+  } catch (err) {
+    console.error("Share failed:", err);
+  }
+});
