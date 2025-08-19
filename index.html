@@ -10,10 +10,21 @@
 
 <body>
 <header>
-  <img src="fplogo.png" alt="Logo" class="header-logo">
+   <button id="menuToggle" class="menu-btn" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   <h2>Floor Planner</h2>
 </header>
-
+<nav id="sideMenu" class="side-menu">
+  <div class="menu-header"><i class="fas fa-th"></i>
+    <h3>Floor Planner</h3>
+  </div>
+  <hr style="margin: 0;">
+  <a href="area-convert.html"><i class="fas fa-chart-area"></i> Area Converter</a>
+  <a href="feedback.html"><i class="far fa-comment"></i> Feedback</a>
+  <a id="shareBtn" class="feedback-btn"> <i class="fas fa-share-alt"></i> Share</a>
+  </nav>
+<div id="overlay"></div>
 
   <main>
     <div class="container">
@@ -58,11 +69,6 @@
   </main>
 
   <footer>
-  <div class="footer-buttons">
-    <a href="area-convert.html" class="feedback-btn">Area Converter</a>
-    <a href="feedback.html" class="feedback-btn">Feedback</a>
-     <button id="shareBtn" class="feedback-btn"><i class="fas fa-share"></i> Share</button>
-  </div>
   <p>© 2025 Floor Planner. All rights reserved.</p>
 </footer>
 
