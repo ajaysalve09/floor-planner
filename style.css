@@ -181,20 +181,6 @@ footer {
   margin-top: auto;
 }
 
-.footer-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-  margin-bottom: 1em;
-}
-
-.footer-buttons .feedback-btn {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 500;
-  background: transparent;
-}
-
 #roomInputsWrapper {
   display: flex;
   overflow-x: auto;
@@ -242,10 +228,74 @@ footer {
   outline: none;
 }
 
-.feedback-btn {
+.menu-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background: #fff;
+}
+
+.menu-logo {
+  height: 2em;
+  width: 2em;
+  margin-right: 10px;
+}
+
+.menu-header h3,
+.header-left h3 {
+  color: #000;
+  font-size: 1.2em;
+  margin: 0 0 0 0.6em;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #fff;
+}
+
+.side-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -260px;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.3s;
+  z-index: 1100;
+}
+
+.side-menu a {
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 1.1em;
+  color: #000;
+  display: block;
+  transition: 0.2s;
+  margin: 0.2em;
+  border-radius: 2em;
+}
+.side-menu a:hover {
   background: #007bff;
   color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 0.8rem;
 }
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: none;
+  z-index: 1000;
+}
+
+.side-menu a i {
+  margin-right: 1.4em;
+}
+
