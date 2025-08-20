@@ -261,18 +261,6 @@ footer {
   color: #fff;
 }
 
-/* .side-menu {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: -260px;
-  background-color: #fff;
-  overflow-x: hidden;
-  transition: 0.3s;
-  z-index: 1100;
-} */
-
 .side-menu a {
   padding: 12px 20px;
   text-decoration: none;
