@@ -50,7 +50,7 @@ body {
 }
 
 header {
-  background: #007bff;
+  background: #0066ff;
   color: #fff;
   padding: 0.6em 0.8em;
   display: flex;
@@ -125,7 +125,7 @@ form#designForm {
   font-weight: 500;
   font-size: 1em;
   margin: 0 4px 0 0;
-  background: #007bff;
+  background: #0066ff;
   color: white;
   border: none;
   border-radius: 7px;
@@ -138,7 +138,7 @@ background: #0056b3;
 }
 
 .btn-reset {
-  background: #007bff;
+  background: #0066ff;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -272,8 +272,7 @@ footer {
   border-radius: 2em;
 }
 .side-menu a:hover {
-  background: #007bff;
-  color: #fff;
+   background: #d1e3ff;
 }
 
 #overlay {
@@ -318,7 +317,7 @@ footer {
 
 .menu-footer a {
   padding: 12px 20px;
-  font-size: 1em;
+  font-size: 14px;
   color: #000;
   display: block;
   transition: 0.2s;
@@ -327,6 +326,5 @@ footer {
 }
 
 .menu-footer a:hover {
-  background: #007bff;
-  color: #fff;
+  background: #d1e3ff;
 }
