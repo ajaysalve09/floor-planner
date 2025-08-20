@@ -205,8 +205,6 @@ const shareBtn = document.getElementById('shareBtn');
   });
   
 
-
-  // Menu toggle
 const menuToggle = document.getElementById("menuToggle");
 const sideMenu = document.getElementById("sideMenu");
 const overlay = document.getElementById("overlay");
@@ -214,11 +212,12 @@ const overlay = document.getElementById("overlay");
 menuToggle.addEventListener("click", () => {
   sideMenu.style.left = "0px";   // show menu
   overlay.style.display = "block"; // show overlay
+  document.body.classList.add("no-scroll"); // disable scroll
 });
 
 // Close when clicking overlay
 overlay.addEventListener("click", () => {
   sideMenu.style.left = "-260px"; 
   overlay.style.display = "none"; 
+  document.body.classList.remove("no-scroll"); // enable scroll
 });
-
